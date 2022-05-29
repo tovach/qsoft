@@ -4,10 +4,11 @@ html {
 }
 
 body {
+  min-width: 375px;
   margin: 0;
   padding: 0;
   padding-bottom: 50px;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   background: #fff;
 }
 
@@ -16,28 +17,19 @@ a {
   text-decoration: none;
 }
 
-*,
-*::after,
-*::before {
+*, *::after, *::before {
   box-sizing: inherit;
 }
 
-ul,
-li {
+ul, li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  padding: 0;
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+  padding: 0;
 }
 
 picture {
@@ -50,40 +42,46 @@ picture {
   position: absolute;
   width: 1px;
   height: 1px;
-  margin: -1px;
-  padding: 0;
   overflow: hidden;
+  margin: -1px;
   border: 0;
+  padding: 0;
   clip: rect(0 0 0 0);
 }
 
 .container {
   width: 100%;
   max-width: 1210px;
-  padding: 0 20px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .header {
   min-height: 80px;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
 }
 
 .header__wrapper {
-  padding: 20px 0;
   display: flex;
-  gap: 60px;
   align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  gap: 60px;
 }
 
 .header__logo {
 }
 
 .logo {
+  display: flex;
 }
+
 .logo__link {
+  line-height: 0;
 }
+
 .logo__img {
+  display: flex;
 }
 
 .header__search-form {
@@ -97,34 +95,36 @@ picture {
 
 .form__input {
   width: 100%;
-  padding: 11px 39px;
   border: 1px solid #ebebf1;
+  padding: 11px 39px;
   border-radius: 5px;
-
-  font-family: "Roboto";
+  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.01em;
 }
+
 .form__input::placeholder {
+  letter-spacing: 0.01em;
   color: #bbc4d6;
 }
 
 .form__button {
   position: absolute;
-  left: 10px;
   top: 0;
   bottom: 0;
+  left: 10px;
 }
 
 .button {
-  padding: 0;
   margin: 0;
   border: none;
+  padding: 0;
   cursor: pointer;
 }
+
 .button--transparent {
   background: transparent;
   line-height: 0;
@@ -137,17 +137,24 @@ picture {
 .header__user-bar::before {
   content: "";
   position: absolute;
-  top: calc(50% - 80px/2);
-  left: -19px;
-  height: 80px;
+  top: calc(50% - 80px / 2);
   width: 1px;
+  height: 80px;
   background: #ebebf1;
 }
 
 .user-bar {
+}
+
+.user-bar--desktop {
   display: flex;
+  padding-left: 20px;
   gap: 10px;
   align-items: center;
+}
+
+.user-bar--mobile {
+  display: none;
 }
 
 .user-bar__link {
@@ -162,6 +169,157 @@ picture {
   letter-spacing: 0.01em;
   color: #768298;
 }
+
 .user-bar__avatar {
   display: flex;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+}
+
+.main {
+  padding-top: 70px;
+}
+
+.main__wrapper {
+}
+
+.main__heading {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 58px;
+  text-transform: uppercase;
+}
+
+.main__partners {
+  padding-top: 30px;
+}
+
+.partners {
+}
+
+.partners__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  transition: all linear 0.2s;
+}
+
+.partners__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
+  overflow: hidden;
+  border: 1px solid #ebebf1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.partners__item:hover {
+  box-shadow:
+    -3px 0 40px rgb(0 0 0 / 10%),
+    0 0 10px rgb(164 164 164 / 3%);
+}
+
+.partners__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 234px;
+  height: 64px;
+}
+
+.partners__img img {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .header__wrapper {
+    gap: 50px;
+  }
+
+  .user-bar__avatar {
+    margin-right: 0;
+  }
+
+  .main__heading {
+    font-size: 28px;
+    line-height: 45px;
+  }
+
+  .partners__list {
+    gap: 20px;
+  }
+
+  .partners__item {
+    width: 229px;
+  }
+
+  .partners__img {
+    width: 199px;
+    height: 90px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .header__user-bar::before {
+    display: none;
+  }
+
+  .header__wrapper {
+    padding-top: 17px;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .header__search-form {
+    order: 3;
+    position: relative;
+  }
+
+  .header__search-form::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 10;
+    right: -20px;
+    left: -20px;
+    height: 1px;
+    background: #dde2eb;
+  }
+
+  .form__input {
+    border: transparent;
+    padding: 13px 29px;
+  }
+
+  .form__button {
+    left: 0;
+  }
+
+  .user-bar--desktop {
+    display: none;
+  }
+
+  .user-bar--mobile {
+    display: flex;
+  }
+
+  .partners__list {
+    justify-content: center;
+  }
+
+  .partners__item {
+    width: 335px;
+    height: 140px;
+  }
+
+  .partners__img {
+    width: 285px;
+    height: 90px;
+  }
 }
