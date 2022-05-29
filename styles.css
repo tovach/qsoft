@@ -1,0 +1,167 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
+  font-family: "Roboto", sans-serif;
+  background: #fff;
+}
+
+a {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+picture {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.vHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  width: 100%;
+  max-width: 1210px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  min-height: 80px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header__wrapper {
+  padding: 20px 0;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.header__logo {
+}
+
+.logo {
+}
+.logo__link {
+}
+.logo__img {
+}
+
+.header__search-form {
+  width: 100%;
+  max-width: 763px;
+}
+
+.form {
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  padding: 11px 39px;
+  border: 1px solid #ebebf1;
+  border-radius: 5px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+}
+.form__input::placeholder {
+  color: #bbc4d6;
+}
+
+.form__button {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+}
+
+.button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+.button--transparent {
+  background: transparent;
+  line-height: 0;
+}
+
+.header__user-bar {
+  position: relative;
+}
+
+.header__user-bar::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 80px/2);
+  left: -19px;
+  height: 80px;
+  width: 1px;
+  background: #ebebf1;
+}
+
+.user-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.user-bar__link {
+  line-height: 0;
+}
+
+.user-bar__name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  text-align: right;
+  letter-spacing: 0.01em;
+  color: #768298;
+}
+.user-bar__avatar {
+  display: flex;
+}
